@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="shortcut icon" type="itme-icon" href="https://cdn.discordapp.com/attachments/1266762190950633502/1303599014872350740/462569609_1076891304105222_8379160945948290972_n.png?ex=672c56b0&is=672b0530&hm=6aabc1e1852fc749b8673817b1c6754ea26b93e82ef46e67dafade98834c988b&">
+  <link rel="shortcut icon" type="image-icon" href="https://cdn.discordapp.com/attachments/1266762190950633502/1303599014872350740/462569609_1076891304105222_8379160945948290972_n.png?ex=672c56b0&is=672b0530&hm=6aabc1e1852fc749b8673817b1c6754ea26b93e82ef46e67dafade98834c988b&">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tenzxy Hub - Link in Bio</title>
   <style>
@@ -22,7 +22,7 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      color: #333;
+      color: #131313;
     }
 
     header {
@@ -51,29 +51,54 @@
       font-weight: bold;
     }
 
-    .bio-links {
-      margin-top: 50px;
-    }
-
-    .bio-links a {
+    .container {
+      position: relative;
+      padding: 3px;
+      background: linear-gradient(90deg, #03a9f4, #f441a5); /* Gradient for the container */
+      border-radius: 0.9em;
       display: inline-block;
-      background: linear-gradient(45deg, #ff5f6d, #ffc3a0); /* Gradient background */
-      color: white;
-      padding: 16px 24px;
+      transition: all 0.4s ease;
       margin: 12px;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-      width: 200px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .bio-links a:hover {
-      background: linear-gradient(45deg, #ff5f6d, #ffc3a0);
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    .container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      border-radius: 0.9em;
+      z-index: -1;
+      filter: blur(0);
+      transition: filter 0.4s ease;
+    }
+
+    .container:hover::before {
+      background: linear-gradient(90deg, #03a9f4, #f441a5);
+      filter: blur(1.2em);
+    }
+
+    .container:active::before {
+      filter: blur(0.2em);
+    }
+
+    button {
+      font-size: 1.4em;
+      padding: 0.6em 0.8em;
+      border-radius: 0.5em;
+      border: none;
+      background: linear-gradient(90deg, #03a9f4, #f441a5);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+      transition: all 0.4s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    button:active {
+      background: linear-gradient(90deg, #f441a5, #03a9f4);
     }
 
     footer {
@@ -96,10 +121,21 @@
   </header>
 
   <div class="bio-links">
-    <a href="https://web.facebook.com/Tenzxyboi" target="_blank">Facebook</a>
-    <a href="https://www.youtube.com/@Super_Green28" target="_blank">YouTube</a>
-    <a href="https://www.instagram.com/tenzblazer/" target="_blank">Instagram</a>
-    <a href="https://discord.gg/2ZUjAmwQYk" target="_blank">Discord</a>
+    <div class="container">
+      <button onclick="window.open('https://discord.gg/2ZUjAmwQYk', '_blank')">Discord</button>
+    </div>
+
+    <div class="container">
+      <button onclick="window.open('https://www.instagram.com/tenzblazer/', '_blank')">Instagram</button>
+    </div>
+
+    <div class="container">
+      <button onclick="window.open('https://www.youtube.com/@Super_Green28', '_blank')">YouTube</button>
+    </div>
+
+    <div class="container">
+      <button onclick="window.open('https://web.facebook.com/Tenzxyboi', '_blank')">Facebook</button>
+    </div>
   </div>
 
   <footer>
